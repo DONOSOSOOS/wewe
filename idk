@@ -341,7 +341,7 @@ Spawner.runEntity = function(entityTable)
             v:Disconnect()
         end
         
-        wait(7)entityModel:Destroy()
+        entityModel:Destroy()
         task.spawn(entityTable.Debug.OnEntityDespawned)
     end
 end
