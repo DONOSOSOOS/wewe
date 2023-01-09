@@ -335,14 +335,14 @@ Spawner.runEntity = function(entityTable)
     end
 
     -- Destroy
-wait(10)
-    wait(10)if not entityModel:GetAttribute("NoAI") then
-        wait(10)for _, v in next, entityConnections do
-            wait(10)v:Disconnect()
+
+    if not entityModel:GetAttribute("NoAI") then
+        for _, v in next, entityConnections do
+            v:Disconnect()
         end
         wait(10)
-        wait(10)entityModel:Destroy()
-        wait(10)task.spawn(entityTable.Debug.OnEntityDespawned)
+        entityModel:Destroy()
+        task.spawn(entityTable.Debug.OnEntityDespawned)
     end
 end
 
